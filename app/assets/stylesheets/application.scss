@@ -1,0 +1,37 @@
+@import 'reset';
+@import 'scaffolds';
+@import 'sessions';
+@import 'users';
+@import 'whiskies';
+* {
+    box-sizing: border-box;
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.header_lists {
+    display: flex;
+}
+
+.header_list {
+    margin: 0 10px;
+}
+
+.notice {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.main_title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

@@ -1,0 +1,28 @@
+// Place all the styles related to the whiskyies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.whisky_lists {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.whisky_list {
+    width: 30%;
+    aspect-ratio: 1;
+    border: 1px solid;
+}
+
+.whisky_create_btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.whisky_create_btn a {
+    background: blue;
+    padding: 10px;
+    color: white;
+}

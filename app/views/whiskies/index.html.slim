@@ -1,0 +1,12 @@
+h1.main_title マイWhisky
+
+- @whiskyies.each do |whisky|
+  div.whisky_lists
+    div.whisky_list
+      p = link_to whisky.name, whisky_path(whisky)
+      p = whisky.description
+
+
+
+
+p.whisky_create_btn = link_to '新しいWhiskyを登録', new_whisky_path
