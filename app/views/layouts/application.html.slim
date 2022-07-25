@@ -7,19 +7,28 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body
+  body.container
   header
-    div class="header_inner"
-      p = link_to 'Whisky Logo', root_url
-      nav
-        ul.header_lists
-          - if current_user 
-            li.header_list = link_to 'マイWhisky一覧', whiskies_path
-            li.header_list = link_to 'ログアウト', logout_path, method: :delete
-          - else
+    div.header_inner
+      - unless current_user 
+        p = link_to 'Whisky Logo', root_url
+        nav
+          ul.header_lists
             li.header_list = link_to '新規会員登録', new_user_path
     
-          - if flash.notice.present?
-            p.notice = flash.notice
+    - if flash.notice.present?
+      p.notice = flash.notice
+
   main
     = yield
+
+  - if current_user 
+    footer.footer 
+      ul.footer_lists
+        li.footer_list = link_to 'Blog', blogs_path
+        li.footer_list = link_to 'Memo', memos_path
+        li.footer_list = link_to 'Add', new_whisky_path
+        li.footer_list = link_to 'Mypage', whiskies_path
+        / message
+        li.footer_list = link_to 'ログアウト', logout_path, method: :delete
+        

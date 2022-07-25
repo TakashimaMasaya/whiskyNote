@@ -1,4 +1,5 @@
-h1 新しいWhiskyを登録
-= render 'form', whisky: @whisky
-= link_to 'Back', whiskies_path
+div.container_inner.min_height_non_header
+  = link_to '< Mypage', whiskies_path, class: "back"
+  h1.main_title 新しいWhiskyを登録
+  = render partial: 'form', locals: { whisky: @whisky }
 

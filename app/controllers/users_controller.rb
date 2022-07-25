@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update!(user_params)
-    redirect_to users_url, notice: "ユーザー情報を更新しました"
+    redirect_to root_url, notice: "ユーザー情報を更新しました"
   end
 
   # DELETE /users/1 or /users/1.json
@@ -51,6 +51,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :admin)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :avatar)
     end
 end

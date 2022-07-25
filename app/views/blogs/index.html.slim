@@ -1,0 +1,13 @@
+div.container_inner.min_height_non_header
+  h1.main_title 全てのブログ
+
+  ul.blog_lists
+    - @blogs.each do |blog|
+      li.blog_list
+        = image_tag blog.thumbnail if blog.thumbnail.attached?
+        = link_to blog.title, blog_path(blog)
+        p.blog_list_description = blog.description
+
+
+  p.fiexed_btn = link_to '+', new_blog_path
+

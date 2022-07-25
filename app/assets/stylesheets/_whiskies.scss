@@ -1,28 +1,60 @@
 // Place all the styles related to the whiskyies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.whisky_lists {
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
+// トップページ
+.user {
     display: flex;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.user_avater img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user_id {
+    font-size: .8em;
+    opacity: .8;
+}
+
+.whisky_lists {
+    display: flex;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
 .whisky_list {
-    width: 30%;
-    aspect-ratio: 1;
-    border: 1px solid;
+    background-color: #B47C20;
+    width: calc( ( 100% - 15px) / 4);
+    margin-bottom: 2px;
+    aspect-ratio: 2/3;
+    text-align: center;
 }
 
-.whisky_create_btn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+.whisky_list a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-.whisky_create_btn a {
-    background: blue;
-    padding: 10px;
-    color: white;
+// 詳細ページ
+.whisky_detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.whisky_detail_name {
+    width: 39%;
+}
+
+.whisky_detail_description {
+    width: 59%;
+}
+
+.whisky_detail_description a {
+    color: #B47C20;
 }

@@ -1,10 +1,11 @@
 class WhiskiesController < ApplicationController
+  before_action :set_whisky, only: [:show, :edit, :update, :destroy]
+
   def index
     @whiskyies = current_user.whiskies
   end
 
   def show
-    @whisky = current_user.whiskies.find(params[:id])
   end
 
   def new
@@ -12,7 +13,6 @@ class WhiskiesController < ApplicationController
   end
 
   def edit
-    @whisky = urrent_user.whiskies.find(params[:id])
   end
 
   def create
@@ -22,15 +22,24 @@ class WhiskiesController < ApplicationController
   end
 
   def update
-    whisky = urrent_user.whiskies.find(params[:id])
-    whisky.update!(whisky_params)
+    @whisky.update!(whisky_params)
     redirect_to whiskies_url, notice: "Whiskyの情報を更新しました"
+  end
+
+  def destroy
+    @whisky.destroy
+    redirect_to whiskies_url, notice: "削除しました"
   end
 
   private
 
       # Only allow a list of trusted parameters through.
   def whisky_params
-    params.require(:whisky).permit(:name, :description)
+    params.require(:whisky).permit(:name, :description, :image)
   end
+
+  def set_whisky
+    @whisky = current_user.whiskies.find(params[:id])
+  end
+
 end
